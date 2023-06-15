@@ -1,0 +1,52 @@
+body {
+    background-color: black;
+    overflow: hidden;
+  }
+  
+  .filmstrip-wrapper {
+    border-top: 1px solid gray;
+    background-color: aqua;
+    border-bottom: 1px solid gray;
+    animation: filmstrip-animation 10s linear infinite;
+    transform: perspective(90);
+    overflow: hidden;
+    display: flex; /* Ekleme: Flex konteyner olarak ayarla */
+    justify-content: center; /* Ekleme: Yatayda ortala */
+    align-items: center; /* Ekleme: Dikeyde ortala */
+    width: 50vw; /* Ekleme: Ekran genişliği kadar genişlik */
+    height: 70px; /* Ekleme: Sabit yükseklik */
+    margin: 0 auto; /* Ekleme: Yatayda ortala */
+    padding: 0; /* Ekleme: İç içe geçme alanını temizle */
+  }
+  
+  .filmstrip {
+    background-color: rgb(255, 0, 0);
+    white-space: nowrap;
+    width: 100vw;
+    display: inline-block; /* Ekleme: Gereksiz boşlukları kaldır */
+  }
+
+  .filmstrip-frame {
+    background-color: rgb(30, 255, 0);
+    border-radius: 3px;
+    display: inline-block;
+    width: 70px; /* Çerçeve genişliği */
+    height: 70px; /* Çerçeve yüksekliği */
+    margin: 0 6px; /* Çerçeve boşluğu */
+  }
+  
+  .filmstrip-frame img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  @keyframes filmstrip-animation {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100px); /* Kaydırma mesafesi */
+    }
+  }
